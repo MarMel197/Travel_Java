@@ -31,4 +31,12 @@ public class Flight {
     public String getDepartureTime() {
         return departureTime;
     }
+
+    public int passengerCount() {
+        return bookedPassengers.size();
+    }
+
+    public void addPassenger(Passenger passenger) {
+        this.bookedPassengers.add(passenger);
+    }
 }

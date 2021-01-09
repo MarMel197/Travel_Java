@@ -39,4 +39,23 @@ public class FlightTest {
     public void canGetDepartureTime(){
         assertEquals("13:00", flight.getDepartureTime());
     }
+
+    @Test
+    public void canCheckBookedPassengerListIsEmpty(){
+        assertEquals(0, flight.passengerCount());
+    }
+
+    @Test
+    public void canAddPassenger(){
+        flight.addPassenger(passenger1);
+        assertEquals(1, flight.passengerCount());
+    }
+    @Test
+    public void canAddAnotherPassenger(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger3);
+        assertEquals(2, flight.passengerCount());
+    }
+
 }
+
