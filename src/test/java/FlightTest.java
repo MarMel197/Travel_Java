@@ -30,4 +30,13 @@ public class FlightTest {
     public void canGetDestination(){
         assertEquals("PER", flight.getDestination());
     }
+
+    @Test
+    public void canGetDepartureAirport(){
+        assertEquals("EDI", flight.getDepartureAirport());
+    }
+    @Test
+    public void canGetDepartureTime(){
+        assertEquals("13:00", flight.getDepartureTime());
+    }
 }

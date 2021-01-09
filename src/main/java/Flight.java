@@ -23,4 +23,12 @@ public class Flight {
     public String getDestination() {
         return destination;
     }
+
+    public String getDepartureAirport() {
+        return departureAirport;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
+    }
 }
