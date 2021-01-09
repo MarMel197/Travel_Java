@@ -1,4 +1,4 @@
- public enum Aircraft {
+ public enum PlaneType {
         AIRBUS_A380(100),
         BOEING_737(40),
         CESSNA_182(8);
@@ -8,8 +8,9 @@
 
         // Like a constructor but not
 
-        Aircraft(int totalWeight){
+        PlaneType(int totalWeight){
             this.totalWeight = totalWeight;
+
         }
         public int getTotalWeight(){
             return totalWeight;
