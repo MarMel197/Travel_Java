@@ -7,11 +7,13 @@ import static org.junit.Assert.assertEquals;
 public class PlaneTest {
     Plane plane1;
     Plane plane2;
+    Plane plane3;
 
     @Before
     public void setUP(){
         plane1 = new Plane(PlaneType.AIRBUS_A380);
         plane2 = new Plane(PlaneType.BOEING_737);
+        plane3 = new Plane(PlaneType.CESSNA_182);
     }
 
     @Test
