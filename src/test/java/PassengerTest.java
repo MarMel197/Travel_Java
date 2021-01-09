@@ -31,5 +31,5 @@ Create a `Flight` class which has:
 
 The `Flight` class should have methods to:
 * return the number of available seats
-* book a passenger (if there are remaining seats)
+* book a passenger (if there are remaining seats).
  */
