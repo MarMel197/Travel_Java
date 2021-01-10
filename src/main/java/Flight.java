@@ -40,19 +40,21 @@ public class Flight {
         this.bookedPassengers.add(passenger);
     }
 
-
-
-    public int checkFlightAvailability(Plane plane, Passenger passenger) {
-        if (this.passengerCount() < plane.getCapacityFromEnum()) {
-            addPassenger(passenger);
-        }
-        return passengerCount();
+    public int returnAvailableSeats(Plane plane){
+        return plane.getCapacityFromEnum() - passengerCount();
     }
 
+    public int checkFlightAvailability(Plane plane, Passenger passenger) {
+        if (returnAvailableSeats(plane) > this.passengerCount()) {
+            addPassenger(passenger);
+        }
+        return  passengerCount();
+    }
 
-//    public void bookPassenger(Passenger passenger) {
-//        if (this.passengerCount() < this.getCapacity()) {
-//            this.bookedPassengers.add(passenger);
-//        }
-//    }
+    //    public int checkFlightAvailability(Plane plane, Passenger passenger) {
+    //        if (this.passengerCount() < plane.getCapacityFromEnum()) {
+    //            addPassenger(passenger);
+    //        }
+    //        return passengerCount();
+    //    }
 }
