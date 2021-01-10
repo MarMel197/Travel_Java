@@ -50,7 +50,7 @@ public class Flight {
         }
         return  passengerCount();
     }
-// ** Re-done as this as I hadn't made or used return available seats **
+// ** Re-done this as I hadn't made or used return available seats **
     //    public int checkFlightAvailability(Plane plane, Passenger passenger) {
     //        if (this.passengerCount() < plane.getCapacityFromEnum()) {
     //            addPassenger(passenger);

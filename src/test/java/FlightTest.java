@@ -61,16 +61,11 @@ public class FlightTest {
         assertEquals(2, flight.passengerCount());
     }
 
-//    public int returnAvailableSeats(Plane plane, Passenger passenger){
-//        return plane.getCapacityFromEnum() - passengerCount();
-//    }
-
     @Test
     public void checkAvailableSeats(){
         flight.addPassenger(passenger1);
         assertEquals(3, flight.returnAvailableSeats(plane));
     }
-
 
     @Test
     public void bookPassengerIfAvailability(){
@@ -85,8 +80,5 @@ public class FlightTest {
         flight.addPassenger(passenger4);
         assertEquals(4, flight.checkFlightAvailability(plane, passenger5));
     }
-
-
-
 }
 
