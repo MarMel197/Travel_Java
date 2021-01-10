@@ -8,7 +8,7 @@ public class Flight {
     private String departureAirport;
     private String departureTime;
 
-    public Flight(String flightNumber, String destination, String departureAirport, String departureTime){
+    public Flight(String flightNumber, String destination, String departureAirport, String departureTime) {
         this.bookedPassengers = new ArrayList<Passenger>();
         this.flightNumber = flightNumber;
         this.destination = destination;
@@ -39,4 +39,20 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
         this.bookedPassengers.add(passenger);
     }
+
+
+
+    public int checkFlightAvailability(Plane plane, Passenger passenger) {
+        if (this.passengerCount() < plane.getCapacityFromEnum()) {
+            addPassenger(passenger);
+        }
+        return passengerCount();
+    }
+
+
+//    public void bookPassenger(Passenger passenger) {
+//        if (this.passengerCount() < this.getCapacity()) {
+//            this.bookedPassengers.add(passenger);
+//        }
+//    }
 }

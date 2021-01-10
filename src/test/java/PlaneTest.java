@@ -10,7 +10,7 @@ public class PlaneTest {
     Plane plane3;
 
     @Before
-    public void setUP(){
+    public void setUp(){
         plane1 = new Plane(PlaneType.AIRBUS_A380);
         plane2 = new Plane(PlaneType.BOEING_737);
         plane3 = new Plane(PlaneType.CESSNA_182);
@@ -19,6 +19,11 @@ public class PlaneTest {
     @Test
     public void canGetAircraftType(){
         assertEquals(PlaneType.AIRBUS_A380, plane1.getAircraft());
+    }
+
+    @Test
+    public void canGetPassengerCapacity(){
+        assertEquals(600, plane1.getCapacityFromEnum());
     }
 
     @Test

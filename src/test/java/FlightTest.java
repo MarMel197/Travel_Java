@@ -6,11 +6,14 @@ public class FlightTest {
 
     Flight flight;
     Plane plane;
+
     Passenger passenger1;
     Passenger passenger2;
     Passenger passenger3;
-    Passenger passenger4; 
-    
+    Passenger passenger4;
+    Passenger passenger5;
+
+
     @Before
     public void setUp(){
         flight = new Flight("BA1234", "PER", "EDI", "13:00");
@@ -19,6 +22,7 @@ public class FlightTest {
         passenger2 = new Passenger("Chris", 1);
         passenger3 = new Passenger("Michael", 3);
         passenger4 = new Passenger("John", 2);
+        passenger5 = new Passenger("Gemma", 5);
     }
     
     @Test
@@ -56,6 +60,24 @@ public class FlightTest {
         flight.addPassenger(passenger3);
         assertEquals(2, flight.passengerCount());
     }
+
+
+    @Test
+    public void bookPassengerIfAvailability(){
+        // flight.addPassenger(passenger5);
+        assertEquals(1, flight.checkFlightAvailability(plane, passenger1));
+    }
+
+    @Test
+    public void dontBookPassengerIfNoAvailability(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger3);
+        flight.addPassenger(passenger4);
+        assertEquals(4, flight.checkFlightAvailability(plane, passenger5));
+    }
+
+
 
 }
 

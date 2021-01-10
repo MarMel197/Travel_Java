@@ -1,18 +1,23 @@
  public enum PlaneType {
-        AIRBUS_A380(100),
-        BOEING_737(40),
-        CESSNA_182(8);
+        AIRBUS_A380(600,100),
+        BOEING_737(400,40),
+        CESSNA_182(4,8);
 
         // Bit like a property in a class!! its internal. final keyword like const
-        private final int totalWeight;
+         private final Integer capacity;
+         private final Integer totalWeight;
 
         // Like a constructor but not
 
-        PlaneType(int totalWeight){
-            this.totalWeight = totalWeight;
+        PlaneType(Integer capacity, Integer totalWeight){
+                this.capacity = capacity;
+                this.totalWeight = totalWeight;
+        }
 
+        public int getCapacity(){
+                return capacity;
         }
-        public int getTotalWeight(){
-            return totalWeight;
-        }
+         public int getTotalWeight(){
+                 return totalWeight;
+         }
 }
