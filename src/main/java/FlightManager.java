@@ -9,6 +9,26 @@ public class FlightManager {
         this.flightBaggageTotal = flightBaggageTotal;
         this.remainingAllowance = remainingAllowance;
     }
+
+    public static int getBaggageCapacity(Plane plane) {
+        return plane.getWeightFromEnum();
+    }
+    public static int getTravellerCapacity(Plane plane) {
+        return plane.getCapacityFromEnum();
+    }
+
+    public static int getPassengerBaggageCapacity(Plane plane) {
+        return plane.getWeightFromEnum() / 2;
+    }
+
+    public static double getPassengerBaggageAllowance(Plane plane) {
+        return plane.getWeightFromEnum() / plane.getCapacityFromEnum();
+    }
+
+
+//    public int returnAvailableSeats(Plane plane){
+//        return plane.getCapacityFromEnum() - passengerCount();
+//    }
 }
 /*
 ### Extensions

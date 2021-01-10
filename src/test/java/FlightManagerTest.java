@@ -1,4 +1,7 @@
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class FlightManagerTest {
 
@@ -15,12 +18,30 @@ public class FlightManagerTest {
     @Before
     public void setUp(){
         flight = new Flight("BA1234", "PER", "EDI", "13:00");
-        plane = new Plane(PlaneType.CESSNA_182);
-        passenger1 = new Passenger("Mark", 2);
+        plane = new Plane(PlaneType.BOEING_737);
+        passenger1 = new Passenger("Mark", 1);
         passenger2 = new Passenger("Chris", 1);
-        passenger3 = new Passenger("Michael", 3);
-        passenger4 = new Passenger("John", 2);
-        passenger5 = new Passenger("Gemma", 5);
+        passenger3 = new Passenger("Michael", 1);
+        passenger4 = new Passenger("John", 1);
+        passenger5 = new Passenger("Gemma", 1);
+    }
+
+    @Test
+    public void canGetTotalWeight() {
+        assertEquals(5500, FlightManager.getBaggageCapacity(plane));
+    }
+
+    @Test
+    public void canGetPassengerCapacity() {
+        assertEquals(400, FlightManager.getTravellerCapacity(plane));
+    }
+    @Test
+    public void totalWeightReservedForPassengers() {
+        assertEquals(2750, FlightManager.getPassengerBaggageCapacity(plane));
+    }
+    @Test
+    public void weightAllowanceForOneBagPerPassinger(){
+        assertEquals(13, FlightManager.getPassengerBaggageAllowance(plane), 0.01);
     }
 
 }
